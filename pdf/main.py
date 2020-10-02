@@ -1,15 +1,26 @@
-from PyPDF2 import PdfFileReader
-from re import split, search
 from os import path
+from re import split, search
 
-print("Enter path for you pdf file. Sample D:/Users/Folder/file.pdf")
-PDF_FILE = str(input())
-while not path.exists(PDF_FILE):
-    print("Error path")
-    PDF_FILE = str(input())
+from PyPDF2 import PdfFileReader
 
 
-def add_word(d: dict, text: str):
+def input_file_name():
+    print("Enter path for you pdf file. Sample D:/Users/Folder/file.pdf")
+    file = str(input())
+    while not path.exists(file):
+        print("Error path")
+        file = str(input())
+    return file
+
+
+def update_dict(word_dict: dict, text: str):
+    """
+    Analyze text, extract words, count them and update already exist dict with new value.
+
+    :param word_dict: dict that contain word as key and word count as value
+    :param text: text for extract words
+    :return: None
+    """
     words = split("  |\n| ", text)
     for word in words:
         word = search(r"\w+", word)
@@ -18,22 +29,63 @@ def add_word(d: dict, text: str):
         word = word.group(0).lower()
         if word.isdigit():
             continue
-        d.setdefault(word, 0)
-        d[word] += 1
+        word_dict.setdefault(word, 0)
+        word_dict[word] += 1
 
 
-pdfReader = PdfFileReader(open(PDF_FILE, "rb"))
-d = {}
-print("Start parsing file - " + PDF_FILE)
-for page_ind in range(pdfReader.numPages):
-    print("Parse " + str((page_ind + 1)) + " page")
-    page = pdfReader.getPage(page_ind)
-    add_word(d, page.extractText())
+def read_file(file_path: str):
+    """
+    Read file_path, extract text, and analyze it, count words.
 
-d = {k: v for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True)}
+    :param file_path: name of PDF file
+    :return: dict with words and their count
+    """
+    pdfReader = PdfFileReader(open(file_path, "rb"))
+    word_dict = {}
+    print("Start parsing file - " + file_path)
+    for page_ind in range(pdfReader.numPages):
+        print("Parse " + str((page_ind + 1)) + " page")
+        page = pdfReader.getPage(page_ind)
+        update_dict(word_dict, page.extractText())
+    return word_dict
 
-print("Write words to file " + PDF_FILE.rstrip(".pdf") + ".txt")
-with open(PDF_FILE.rstrip(".pdf") + ".txt", "w", encoding='utf-8') as file:
-    words = [str(i) + " - " + str(j) for i, j in d.items()]
-    file.write("\n".join(words))
-str(input(""))
+
+def sort_dict(word_dict, key=lambda item: item[1], reverse=True):
+    """
+    Sort dict by specified parameters.
+
+    :param word_dict: dict that contain word as key and word count as value
+    :param key: function by which word_dict will be sorted
+    :param reverse: True sort by decrease, False - increase.
+    :return: New sorted dict
+    """
+    return {k: v for k, v in sorted(word_dict.items(), key=key, reverse=reverse)}
+
+
+def write_file(word_dict, file_path):
+    """
+    Write word with their count to file_path.
+
+    :param word_dict: dict that contain word as key and word count as value
+    :param file_path: path to save file
+    :return: boolean with status of writing to file. True - ok, False - some problems.
+    """
+    print("Write words to file " + file_path)
+    try:
+        with open(file_path, "w", encoding='utf-8') as file:
+            words = [str(i) + " - " + str(j) for i, j in word_dict.items()]
+            file.write("\n".join(words))
+            print("File success created!")
+            print(f"File contain {len(words)}")
+            return True
+    except IOError as e:
+        print(e)
+        return False
+
+
+if __name__ == '__main__':
+    file = input_file_name()
+    word_dict = read_file(file)
+    word_dict = sort_dict(word_dict)
+    write_file(word_dict, file.rstrip(".pdf") + ".txt")
+    str(input(""))

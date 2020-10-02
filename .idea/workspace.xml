@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4e27825-7c36-4df6-a847-cec2006b95dd" name="Default Changelist" comment="" />
+    <list default="true" id="e4e27825-7c36-4df6-a847-cec2006b95dd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pdf/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +18,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Oleksii Hromovych &lt;61205843+oleksiihromovych@users.noreply.github.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1gKAbYiskwQhidsgdsLXl731YoY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,6 +35,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -70,26 +84,36 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Reformat code.&#10;&#10;Group code and improve readability of it." />
+    <option name="LAST_COMMIT_MESSAGE" value="Reformat code.&#10;&#10;Group code and improve readability of it." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="478" y="13" key="CommitChangelistDialog2" timestamp="1601662262150">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="478" y="13" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1601662262150" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1597853473302">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1597853473302" />
-    <state width="1515" height="246" key="GridCell.Tab.0.bottom" timestamp="1597859825118">
+    <state width="1515" height="246" key="GridCell.Tab.0.bottom" timestamp="1601661939328">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="246" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597859825118" />
-    <state width="1515" height="246" key="GridCell.Tab.0.center" timestamp="1597859825117">
+    <state width="1515" height="246" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601661939328" />
+    <state width="1515" height="246" key="GridCell.Tab.0.center" timestamp="1601661939328">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="246" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597859825117" />
-    <state width="1515" height="246" key="GridCell.Tab.0.left" timestamp="1597859825116">
+    <state width="1515" height="246" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601661939328" />
+    <state width="1515" height="246" key="GridCell.Tab.0.left" timestamp="1601661939327">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="246" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597859825116" />
-    <state width="1515" height="246" key="GridCell.Tab.0.right" timestamp="1597859825117">
+    <state width="1515" height="246" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601661939327" />
+    <state width="1515" height="246" key="GridCell.Tab.0.right" timestamp="1601661939328">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="246" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597859825117" />
+    <state width="1515" height="246" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601661939328" />
   </component>
 </project>
